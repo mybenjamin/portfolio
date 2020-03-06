@@ -1,0 +1,28 @@
+:host {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.nav__item {
+  margin: .5rem;
+}
+
+.nav__fab {
+  opacity: .5;
+  transition: 1s ease;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    transition: 1s ease;
+  }
+}
