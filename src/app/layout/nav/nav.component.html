@@ -1,1 +1,36 @@
-<p>nav works!</p>
+<div class="nav" *ngIf="navOpen" @fadeIn>
+
+  <button mat-icon-button color="primary" (click)="showTooltips([tt1, tt2, tt3, tt4, tt5])">
+    <mat-icon>remove_red_eye</mat-icon>
+  </button>
+
+  <button mat-mini-fab color="accent" class="nav__item" matTooltip="contact" matTooltipPosition="left"
+    #tt1="matTooltip">
+    <mat-icon>alternate_email</mat-icon>
+  </button>
+
+  <button mat-mini-fab color="accent" class="nav__item" matTooltip="profile" matTooltipPosition="left"
+    #tt2="matTooltip">
+    <mat-icon>account_box</mat-icon>
+  </button>
+
+  <button mat-mini-fab color="accent" class="nav__item" matTooltip="work history" matTooltipPosition="left"
+    #tt3="matTooltip">
+    <mat-icon>work</mat-icon>
+  </button>
+
+  <button mat-mini-fab color="accent" class="nav__item" matTooltip="blog" matTooltipPosition="left" #tt4="matTooltip">
+    <mat-icon>comment</mat-icon>
+  </button>
+
+  <button mat-mini-fab color="accent" class="nav__item" matTooltip="tech stack" matTooltipPosition="left"
+    #tt5="matTooltip">
+    <mat-icon>code</mat-icon>
+  </button>
+
+</div>
+
+<button mat-fab color="primary" class="nav__fab" (click)="navOpen = !navOpen">
+  <mat-icon *ngIf="!navOpen" @flipIn>menu</mat-icon>
+  <mat-icon *ngIf="navOpen" @flipIn>close</mat-icon>
+</button>
