@@ -30,7 +30,7 @@
 
 </div>
 
-<button mat-fab color="primary" class="nav__fab" (click)="navOpen = !navOpen">
+<button mat-fab color="primary" class="nav__fab" (click)="showNav()" [disabled]="spam">
   <mat-icon *ngIf="!navOpen" @flipIn>menu</mat-icon>
   <mat-icon *ngIf="navOpen" @flipIn>close</mat-icon>
 </button>

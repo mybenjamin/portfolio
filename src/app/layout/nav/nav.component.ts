@@ -12,6 +12,7 @@ import { navAnimations } from './nav.animations';
 export class NavComponent {
 
   navOpen: boolean;
+  spam = false;
 
   constructor() { }
 
@@ -19,5 +20,15 @@ export class NavComponent {
     for (const tooltip of tooltips) {
       tooltip.show();
     }
+  }
+
+  showNav() {
+    this.spamProtector();
+    this.navOpen = !this.navOpen;
+  }
+
+  spamProtector() {
+    this.spam = true;
+    setTimeout(() => this.spam = !this.spam, 1100);
   }
 }

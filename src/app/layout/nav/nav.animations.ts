@@ -2,7 +2,7 @@ import { trigger, transition, query, style, stagger, animate, keyframes } from '
 
 export const navAnimations = [
   trigger('flowInOut', [
-    transition('void => *', [
+    transition(':enter', [
       query('button', [
         style({ opacity: 0, transform: 'translateY(100px)' }),
         stagger(-150, [
@@ -11,7 +11,7 @@ export const navAnimations = [
       ])
     ]),
 
-    transition('* => void', [
+    transition(':leave', [
       query('button', [
         style({ opacity: 1, transform: 'translateY(0)' }),
         stagger(150, [
