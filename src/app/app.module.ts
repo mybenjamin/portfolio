@@ -9,11 +9,13 @@ import { MaterialModule } from './shared/material.module';
 // App Components
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
+import { NavComponent } from './layout/nav/nav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent
+    LayoutComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
