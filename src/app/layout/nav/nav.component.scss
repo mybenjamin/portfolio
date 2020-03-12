@@ -17,12 +17,5 @@
 }
 
 .nav__fab {
-  opacity: .5;
-  transition: 1s ease;
-
-  &:hover,
-  &:focus {
-    opacity: 1;
-    transition: 1s ease;
-  }
+  transition: 1s ease-out;
 }

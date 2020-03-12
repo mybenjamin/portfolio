@@ -5,8 +5,8 @@ export const navAnimations = [
     transition(':enter', [
       query('button', [
         style({ opacity: 0, transform: 'translateY(100px)' }),
-        stagger(-150, [
-          animate(300, style({ opacity: 1, transform: 'translateY(0)' }))
+        stagger(-75, [
+          animate(100, style({ opacity: 1, transform: 'translateY(0)' }))
         ])
       ])
     ]),
@@ -14,8 +14,8 @@ export const navAnimations = [
     transition(':leave', [
       query('button', [
         style({ opacity: 1, transform: 'translateY(0)' }),
-        stagger(150, [
-          animate(200, style({ opacity: 0, transform: 'translateY(100px)' }))
+        stagger(50, [
+          animate(100, style({ opacity: 0, transform: 'translateY(100px)' }))
         ])
       ])
     ])

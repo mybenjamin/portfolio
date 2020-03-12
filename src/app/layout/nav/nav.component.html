@@ -1,7 +1,11 @@
 <div class="nav" *ngIf="navOpen" @flowInOut>
 
-  <button mat-icon-button color="primary" (click)="showTooltips([tt1, tt2, tt3, tt4, tt5])">
+  <button mat-icon-button color="primary" (click)="showTooltips([tt1, tt2, tt3, tt4, tt5, tt6])">
     <mat-icon>remove_red_eye</mat-icon>
+  </button>
+
+  <button mat-mini-fab color="accent" class="nav__item" matTooltip="blog" matTooltipPosition="left" #tt4="matTooltip">
+    <mat-icon>comment</mat-icon>
   </button>
 
   <button mat-mini-fab color="accent" class="nav__item" matTooltip="contact" matTooltipPosition="left"
@@ -9,18 +13,9 @@
     <mat-icon>alternate_email</mat-icon>
   </button>
 
-  <button mat-mini-fab color="accent" class="nav__item" matTooltip="profile" matTooltipPosition="left" #tt2="matTooltip"
-    [routerLink]="['/profile']">
-    <mat-icon>account_box</mat-icon>
-  </button>
-
   <button mat-mini-fab color="accent" class="nav__item" matTooltip="work history" matTooltipPosition="left"
     #tt3="matTooltip">
     <mat-icon>work</mat-icon>
-  </button>
-
-  <button mat-mini-fab color="accent" class="nav__item" matTooltip="blog" matTooltipPosition="left" #tt4="matTooltip">
-    <mat-icon>comment</mat-icon>
   </button>
 
   <button mat-mini-fab color="accent" class="nav__item" matTooltip="tech stack" matTooltipPosition="left"
@@ -28,9 +23,19 @@
     <mat-icon>code</mat-icon>
   </button>
 
+  <button mat-mini-fab color="accent" class="nav__item" matTooltip="profile" matTooltipPosition="left" #tt2="matTooltip"
+    [routerLink]="['/profile']">
+    <mat-icon>account_box</mat-icon>
+  </button>
+
+  <button mat-mini-fab color="accent" class="nav__item" matTooltip="home" matTooltipPosition="left" #tt6="matTooltip"
+    [routerLink]="['']">
+    <mat-icon>home</mat-icon>
+  </button>
+
 </div>
 
-<button mat-fab color="primary" class="nav__fab" (click)="showNav()" [disabled]="spam">
+<button #mainFab mat-fab color="primary" class="nav__fab" (click)="showNav()" [disabled]="spam">
   <mat-icon *ngIf="!navOpen" @flipIn>menu</mat-icon>
   <mat-icon *ngIf="navOpen" @flipIn>close</mat-icon>
 </button>
