@@ -45,10 +45,10 @@ export class NavComponent implements OnInit {
     const currentScrollPos = window.pageYOffset;
 
     if (this.prevScrollpos > currentScrollPos) {
-      fab.style.opacity = 1;
+      fab.style.transform = 'translateX(0)';
       fab.disabled = false;
     } else {
-      fab.style.opacity = 0;
+      fab.style.transform = 'translateX(100px)';
       fab.disabled = true;
     }
 
