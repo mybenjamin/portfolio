@@ -1,4 +1,4 @@
-import { Component, HostListener, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { Component, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { MatTooltip } from '@angular/material/tooltip';
 import { navAnimations } from './nav.animations';
 
@@ -9,18 +9,14 @@ import { navAnimations } from './nav.animations';
   animations: navAnimations
 })
 
-export class NavComponent implements OnInit {
+export class NavComponent {
 
-  prevScrollpos: number;
+  prevScrollpos = 99999999999;
   navOpen: boolean;
   spam = false;
   @ViewChild('mainFab', { read: ElementRef }) fab: ElementRef;
 
   constructor() { }
-
-  ngOnInit(): void {
-    this.prevScrollpos = window.pageYOffset * 100000; // Shows fab on initial load despite position
-  }
 
   showTooltips(tooltips: Array<MatTooltip>) {
     for (const tooltip of tooltips) {
@@ -40,10 +36,8 @@ export class NavComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event']) hideButton(e) {
     if (this.navOpen) { return; }
-
     const fab = this.fab.nativeElement;
     const currentScrollPos = window.pageYOffset;
-
     if (this.prevScrollpos > currentScrollPos) {
       fab.style.transform = 'translateX(0)';
       fab.disabled = false;
@@ -51,7 +45,6 @@ export class NavComponent implements OnInit {
       fab.style.transform = 'translateX(100px)';
       fab.disabled = true;
     }
-
     this.prevScrollpos = currentScrollPos;
   }
 }
