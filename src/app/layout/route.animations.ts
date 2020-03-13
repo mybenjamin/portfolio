@@ -3,8 +3,6 @@ import { trigger, transition, style, query, animateChild, group, animate, keyfra
 export const slideInAnimation =
   trigger('routeAnimations', [
     transition('* <=> *', [
-      style({ position: 'relative' }),
-
       // Initial State
       query(':enter, :leave', style({ position: 'absolute' }), { optional: true }),
 
@@ -12,20 +10,21 @@ export const slideInAnimation =
       group([
 
         // Enter Initial Style
-        query(':enter', [style({ opacity: '0', transform: 'translateX(-150em)' })], { optional: true }),
+        query(':enter', [style({ opacity: '0', clipPath: 'inset(0 100% 0 0)' })], { optional: true }),
 
         // Enter Animation
         query(':enter', [
-          animate('.8s', keyframes([
-            style({ opacity: 1, transform: 'translateX(0)' }),
+          animate('1.5s', keyframes([
+            style({ opacity: 1, clipPath: 'inset(0 0 0 0)' }),
           ])),
           animateChild()], { optional: true }),
 
+        query(':leave', [style({ opacity: '1', clipPath: 'inset(0 0 0 0)' })], { optional: true }),
+
         // Leave Animation
         query(':leave', [
-          animate('.8s', keyframes([
-            style({ transform: 'scale(0.9)', offset: 0.3 }),
-            style({ opacity: 0, transform: 'translateX(150em)', offset: 1 }),
+          animate('1.5s', keyframes([
+            style({ opacity: 0, clipPath: 'inset(0 0 0 100%)', offset: .99 }),
           ])),
           animateChild()], { optional: true }),
       ])
