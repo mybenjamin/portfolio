@@ -14,7 +14,7 @@ export const slideInAnimation =
 
         // Enter Animation
         query(':enter', [
-          animate('1.5s', keyframes([
+          animate('.7s', keyframes([
             style({ opacity: 1, clipPath: 'inset(0 0 0 0)' }),
           ])),
           animateChild()], { optional: true }),
@@ -23,7 +23,7 @@ export const slideInAnimation =
 
         // Leave Animation
         query(':leave', [
-          animate('1.5s', keyframes([
+          animate('.7s', keyframes([
             style({ opacity: 0, clipPath: 'inset(0 0 0 100%)', offset: .99 }),
           ])),
           animateChild()], { optional: true }),
