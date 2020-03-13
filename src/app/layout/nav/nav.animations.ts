@@ -28,12 +28,5 @@ export const navAnimations = [
         style({ opacity: 1, transform: 'rotateX(0)' }),
       ]))
     ]),
-
-    transition('void => *', [
-      animate('.5s', keyframes([
-        style({ opacity: 0, transform: 'rotateX(0)' }),
-        style({ opacity: 1, transform: 'rotateX(80deg)' }),
-      ]))
-    ])
   ])
 ];
