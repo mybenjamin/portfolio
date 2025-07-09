@@ -6,7 +6,6 @@ useSeoMeta({
     description: content.value?.description
 })
 
-console.log('Home data:', content.value)
 </script>
 
 <template>
