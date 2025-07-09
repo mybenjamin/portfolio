@@ -1,16 +1,15 @@
 <script setup lang="ts">
 const { content } = await useContent()
-console.log('Content:', content.value)
+
+useSeoMeta({
+    title: content.value?.title,
+    description: content.value?.description
+})
+
+console.log('Home data:', content.value)
 </script>
+
 <template>
-    <UApp>
-        {{ content }}
-        <h1>Welcome to my portfolio!</h1>
-        <p>Created by mybenjamin.dev</p>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-    </UApp>
+    <ContentRenderer v-if="content" :value="content" />
+    <div v-else>Home not found</div>
 </template>
